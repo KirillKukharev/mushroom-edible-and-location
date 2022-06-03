@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 align="center">Добавить местоположение,</h2>
+    <h2 align="center">где вы нашли гриб.</h2>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_location') }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">place</i>
+                <input id="location_name" name="location_name" maxlength="30" type="text" class="validate" required>
+                <label for="location_name">Название локации</label>
+            </div>
+        </div>
+        <div class="row">
+            <h5 align="center">Укажите точку на карте, где вы нашли гриб.</h5>
+        </div>
+        <div class="col s12">
+            <script src="{{ url_for('static', filename='js/add_mushroom_map.js') }}"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtrnNP1D5-lslju26aNqSZ9oBZPQco0xc&libraries=visualization,geometry&callback=initMap&v=weekly"></script>
+            <div id="map">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">travel_explore</i>
+                <input id="lat" name="lat" type="number" class="validate" readonly="readonly" step="any" required>
+{#                <label for="lat">Latitude</label>#}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">travel_explore</i>
+{#                <p id="lng" name="lng" type="number" class="validate" step="any" required>Longitude</p>#}
+                <input id="lng" name="lng" type="number" class="validate" readonly="readonly" step="any" required>
+{#                <label for="lng">Longitude</label>#}
+            </div>
+        </div>
+{#        <div class="row">#}
+{#            <div class="input-field col s12">#}
+{#                <i class="material-icons prefix">travel_explore</i>#}
+{#                <input id="lat" name="lat" type="number" class="validate" step="any" required>#}
+{#                <label for="lat">Latitude</label>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            <div class="input-field col s12">#}
+{#                <i class="material-icons prefix">travel_explore</i>#}
+{#                <input id="lng" name="lng" type="number" class="validate" step="any" required>#}
+{#                <label for="lng">Longitude</label>#}
+{#            </div>#}
+{#        </div>#}
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light" type="submit">Add Location
+                    <i class="material-icons right">add</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
