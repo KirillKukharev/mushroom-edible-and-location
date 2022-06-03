@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Определение съедобности</title>
+{% endblock %}
+{% block content %}
+
+
+
+<div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4" align="center">
+                {% if (numbr==1) %}
+                    <div>
+                        <img style="height: 100%; width: 100%; object-fit: contain" src="{{ url_for('display_image', filename=url) }}" class="card-img-bottom" alt="upload_image">
+                    </div>
+                    <div align="center">
+                        <div class="col">
+                        <hr>
+                            <h2>Ваш гриб скорее всего <mark>{{ eat }}</mark>.</h2>
+                        </div>
+                    </div>
+                {% elif (numbr>1) %}
+                    {% for mushromes in urls %}
+                        <div style="border-width: 3px; border-color: rgb(0,0,0);border-style: solid;">
+                            <img style="height: 100%; width: 100%; object-fit: contain" src="{{ url_for('display_image', filename=mushromes[0]) }}" class="card-img-bottom" alt="upload_image">
+{#                        </div>#}
+{#                        <div align="center">#}
+{#                            <div class="col">#}
+                            <hr>
+                                <h3>Ваш гриб скорее всего <mark>{{ mushromes[1] }}</mark></h3>
+{#                            </div>#}
+                        </div>
+                        <br>
+                        <br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+</div>
+
+
+
+
+{% endblock %}
