@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 class="center-align">Авторизация</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel">
+                <!-- username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix light-blue-text text-darken-4">manage_accounts</i>
+                        <input id="username" name="username" type="text" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{5,18}$" class="validate" required>
+                        <label for="username">Логин</label>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix light-blue-text text-darken-4">lock</i>
+                        <input id="password" name="password" type="password" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{8,18}$" class="validate" required>
+                        <label for="password">Пароль</label>
+                    </div>
+                </div>
+                <!-- login -->
+                <div class="row">
+                    <button type="submit" class="col s4 offset-m4 btn-large light-blue darken-4">
+                        Войти <i class="material-icons">login</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                Нет аккаунта?
+                <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4">Зарегистрируйтесь</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
