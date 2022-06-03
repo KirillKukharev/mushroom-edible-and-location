@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{#{% block head %}#}
+{#<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>#}
+{#{% endblock %}#}
+{% block content %}
+
+<h2 id="head_to_spy" align="center">Загрузите фото гриба,<br> чтобы определить его съедобность.</h2>
+    {#<main role="main">#}
+<div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4" align="center">
+                <div id="loading" style="display: none;">
+                    <h3>Подождите немного, фото обрабатывается.</h3>
+                    <img style="height: 40%; width: 33%; object-fit: contain" src="/static/images/loader.gif" alt="Card image cap">
+                </div>
+                <div id="content">
+                    <img style='height: 40%; width: 33%; object-fit: contain' src="../static/images/img4.jpg" alt="Card image cap">
+                    <img style='height: 40%; width: 33%; object-fit: contain' src="../static/images/img2.jpg" alt="Card image cap">
+                    <img style='height: 40%; width: 33%; object-fit: contain' src="../static/images/img3.jpg" alt="Card image cap">
+                    <img style='height: 40%; width: 33%; object-fit: contain' src="../static/images/img5.jpg" alt="Card image cap">
+                </div>
+            </div>
+{#            <div class="col-md-4">#}
+{#                <div class="card mb-4 box-shadow">#}
+{#                    <img style='height: 100%; width: 100%; object-fit: contain' src="../static/images/img2.jpg" alt="Card image cap">#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-4">#}
+{#                <div class="card mb-4 box-shadow">#}
+{#                    <img style='height: 100%; width: 100%; object-fit: contain' src="../static/images/img3.jpg" alt="Card image cap">#}
+{#                </div>#}
+{#            </div>#}
+</div>
+</div>
+
+
+<div id="post_data" align="center">
+    <div class="col">
+        <hr>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file" name="file" />
+{#                    <label class="custom-file-label" for="file">Выбрать фото</label>#}
+                </div>
+                <div class="input-group-append">
+                    <button id="spy" class="btn btn-primary" onclick="loading();">Проверить</button>
+                </div>
+            </div>
+            <script type="application/javascript">
+                $('input[type="file"]').change(function(e) {
+                    var fileName = e.target.files[0].name;
+                    $('.custom-file-label').html(fileName);
+                });
+                function loading(){
+                    $("#loading").show();
+                    $("#content").hide();
+                    $("#post_data").hide();
+                    $("#head_to_spy").hide();
+                }
+            </script>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
