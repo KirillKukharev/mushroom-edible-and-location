@@ -85,11 +85,11 @@ function initialize() {
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
     var config = {
-        apiKey: "AIzaSyCht0LhaaZP89ICldZNXNYgnww5J9iaa38",
-        authDomain: "mushroomm-b7709.firebaseapp.com",
-        databaseURL: "https://mushroomm-b7709-default-rtdb.firebaseio.com",
-        storageBucket: "mushroomm-b7709.appspot.com",
-        serviceAccount: "mushroomm-b7709-firebase-adminsdk-3z1dn-20eff067a0.json"
+        apiKey: "your api",
+        authDomain: "your domain",
+        databaseURL: "your url",
+        storageBucket: "your bucket",
+        serviceAccount: "your service acc"
     };
     firebase.initializeApp(config);
 
