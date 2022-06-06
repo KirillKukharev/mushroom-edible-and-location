@@ -7,3 +7,6 @@ Diploma project. This repository contains simple web site, which was written on 
 Yandex.Weather retrieve data about weather. It gets parameters such as soil moisture, soil temperature, temperature and etc. After retrieved data program calculate score that become to mushrooms condition and define for each place percent of possible growing of mushroom.
  3. train folder consists files that relate of train models to detect mushrooms on photo and classify mushroom species. This info helps to chose if the mushroom is edible or not.
 You can download dataset for train and weights of trained models by [this link](https://drive.google.com/drive/folders/1-E2Co9ZdZYGQk-G4aeE_QWtv4Mu30pLJ?usp=sharing).
+
+# Publications
+You can read [article about edible or poison classification](https://www.elibrary.ru/item.asp?id=48512867&pff=1).
