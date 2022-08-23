@@ -11,7 +11,9 @@ You can download dataset for train and weights of trained models by [this link](
 # Run docker image
 You can pull [docker image](https://hub.docker.com/repository/docker/kosmak/mushrooms) from docker hub. 
 Then run image on 8000 port: 
-    docker run -p 80:8000 -d --rm --name kosmak_cont kosmak/mushrooms:mushrooms 
+```
+docker run -p 80:8000 -d --rm --name kosmak_cont kosmak/mushrooms:mushrooms
+``` 
 
 # Publications
 You can read [article about edible or poison classification](https://www.elibrary.ru/item.asp?id=48512867&pff=1).
