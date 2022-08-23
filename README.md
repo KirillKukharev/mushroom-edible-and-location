@@ -8,9 +8,10 @@ Yandex.Weather retrieve data about weather. It gets parameters such as soil mois
  3. train folder consists files that relate of train models to detect mushrooms on photo and classify mushroom species. This info helps to chose if the mushroom is edible or not.
 You can download dataset for train and weights of trained models by [this link](https://drive.google.com/drive/folders/1-E2Co9ZdZYGQk-G4aeE_QWtv4Mu30pLJ?usp=sharing).
 
-#Run docker image
+# Run docker image
 You can pull [docker image](https://hub.docker.com/repository/docker/kosmak/mushrooms) from docker hub. 
-Then run image on 8000 port: <docker run -p 80:8000 -d --rm --name kosmak_cont kosmak/mushrooms:mushrooms> 
+Then run image on 8000 port: 
+    docker run -p 80:8000 -d --rm --name kosmak_cont kosmak/mushrooms:mushrooms 
 
 # Publications
 You can read [article about edible or poison classification](https://www.elibrary.ru/item.asp?id=48512867&pff=1).
